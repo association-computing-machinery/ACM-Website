@@ -1,0 +1,21 @@
+{
+  "name": "acm-itu-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "concurrently -n \"api,app\" -c \"cyan,magenta\" \"npm run dev:api\" \"npm run dev\"",
+    "dev": "npm --prefix ../frontend run dev",
+    "dev:api": "node --env-file-if-exists=../.env --watch src/server.js",
+    "start:api": "node --env-file-if-exists=../.env src/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  },
+  "dependencies": {
+    "@imagekit/nodejs": "7.11.0",
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "mysql2": "^3.24.3",
+    "nodemailer": "^10.0.14"
+  }
+}
